@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		178605E92B51783A00F3D29E /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178605E82B51783A00F3D29E /* CounterView.swift */; };
+		178605EB2B517B4800F3D29E /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178605EA2B517B4800F3D29E /* CounterViewModel.swift */; };
 		17BFB34D2B4EDE4C00BD2EC6 /* Drop_WorkerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFB34C2B4EDE4C00BD2EC6 /* Drop_WorkerApp.swift */; };
 		17BFB34F2B4EDE4C00BD2EC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFB34E2B4EDE4C00BD2EC6 /* ContentView.swift */; };
 		17BFB3512B4EDE4D00BD2EC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17BFB3502B4EDE4D00BD2EC6 /* Assets.xcassets */; };
 		17BFB3542B4EDE4D00BD2EC6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17BFB3532B4EDE4D00BD2EC6 /* Preview Assets.xcassets */; };
+		17BFB3632B4EE7D200BD2EC6 /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFB3622B4EE7D200BD2EC6 /* CounterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		178605E82B51783A00F3D29E /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		178605EA2B517B4800F3D29E /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		17BFB3492B4EDE4C00BD2EC6 /* Drop&Worker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Drop&Worker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17BFB34C2B4EDE4C00BD2EC6 /* Drop_WorkerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drop_WorkerApp.swift; sourceTree = "<group>"; };
 		17BFB34E2B4EDE4C00BD2EC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		17BFB3502B4EDE4D00BD2EC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17BFB3532B4EDE4D00BD2EC6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17BFB3552B4EDE4D00BD2EC6 /* Drop_Worker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Drop_Worker.entitlements; sourceTree = "<group>"; };
+		17BFB3622B4EE7D200BD2EC6 /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,7 @@
 		17BFB34B2B4EDE4C00BD2EC6 /* Drop&Worker */ = {
 			isa = PBXGroup;
 			children = (
+				17BFB35B2B4EE32000BD2EC6 /* Feature */,
 				17BFB34C2B4EDE4C00BD2EC6 /* Drop_WorkerApp.swift */,
 				17BFB34E2B4EDE4C00BD2EC6 /* ContentView.swift */,
 				17BFB3502B4EDE4D00BD2EC6 /* Assets.xcassets */,
@@ -67,6 +74,24 @@
 				17BFB3532B4EDE4D00BD2EC6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		17BFB35B2B4EE32000BD2EC6 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				17BFB35C2B4EE34900BD2EC6 /* Counter */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		17BFB35C2B4EE34900BD2EC6 /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				178605EA2B517B4800F3D29E /* CounterViewModel.swift */,
+				17BFB3622B4EE7D200BD2EC6 /* CounterModel.swift */,
+				178605E82B51783A00F3D29E /* CounterView.swift */,
+			);
+			path = Counter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178605EB2B517B4800F3D29E /* CounterViewModel.swift in Sources */,
 				17BFB34F2B4EDE4C00BD2EC6 /* ContentView.swift in Sources */,
 				17BFB34D2B4EDE4C00BD2EC6 /* Drop_WorkerApp.swift in Sources */,
+				17BFB3632B4EE7D200BD2EC6 /* CounterModel.swift in Sources */,
+				178605E92B51783A00F3D29E /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
