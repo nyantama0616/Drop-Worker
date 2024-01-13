@@ -17,4 +17,16 @@ public struct FileIO {
             }
         }
     }
+
+    public func getOutputFileNames() -> [String] {
+        let fileManager = Foundation.FileManager.default
+        do {
+            let outputFiles = try fileManager.contentsOfDirectory(at: outputDirectoryURL, includingPropertiesForKeys: nil)
+            let fileNames = outputFiles.map { $0.lastPathComponent }
+            return fileNames
+        } catch {
+            print("Error getting output files: \(error)")
+            return []
+        }
+    }
 }

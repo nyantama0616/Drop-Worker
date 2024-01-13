@@ -5,6 +5,11 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 public class FileOperatorViewModel: ObservableObject {
+    @Published private var model: FileOperatorModel = FileOperatorModel()
+    
+    var outputFileNames: [String] {
+        model.outputFileNames
+    }
     var dropDelegate: FileOperatorDropDelegate = FileOperatorDropDelegate()
 
     init() {
@@ -13,6 +18,7 @@ public class FileOperatorViewModel: ObservableObject {
         }
     }
 
+    //TODO: 同じ名前のファイルが存在した場合の挙動を考える
     private func _addName(fileURL: URL) {
         let name = "中北竜馬" //TODO: 設定可能にする
         
@@ -24,6 +30,7 @@ public class FileOperatorViewModel: ObservableObject {
 
         do {
             try FileManager.default.copyItem(at: fileURL, to: destinationURL)
+            model.updateOutputFileNames()
             print("Copied file to: \(destinationURL)")
         } catch {
             print("Error copying file: \(error)")

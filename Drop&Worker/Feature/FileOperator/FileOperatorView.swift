@@ -5,13 +5,13 @@ public struct FileOperatorView: View {
     @ObservedObject var viewModel: FileOperatorViewModel
     
     public var body: some View {
-        VStack {
-            Text("Drop a File!")
-                .padding()
-                .background(Color.yellow)
-                .cornerRadius(10)
+        HStack {
+            DropArea()
+                .frame(width: 200, height: 200)
+                .onDrop(of: [.fileURL], delegate: viewModel.dropDelegate)
+            OutputArea(outputFileNames: viewModel.outputFileNames)
+                .frame(width: 200, height: 200)
         }
-        .onDrop(of: [.fileURL], delegate: viewModel.dropDelegate)
     }
 }
 
@@ -19,4 +19,3 @@ public struct FileOperatorView: View {
     FileOperatorView(viewModel: FileOperatorViewModel())
         .padding()
 }
-
