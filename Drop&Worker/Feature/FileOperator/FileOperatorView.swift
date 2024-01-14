@@ -9,7 +9,7 @@ public struct FileOperatorView: View {
             DropArea()
                 .frame(width: 200, height: 200)
                 .onDrop(of: [.fileURL], delegate: viewModel.dropDelegate)
-            OutputArea(outputFileNames: viewModel.outputFileNames)
+            OutputArea(outputFileNames: viewModel.outputFileNames, onClear: viewModel.clearOutputs)
                 .frame(width: 200, height: 200)
         }
     }

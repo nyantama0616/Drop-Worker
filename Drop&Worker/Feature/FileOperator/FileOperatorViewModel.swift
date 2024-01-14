@@ -10,6 +10,11 @@ public class FileOperatorViewModel: ObservableObject {
     var outputFileNames: [String] {
         model.outputFileNames
     }
+
+    func clearOutputs() {
+        model.clearOutputs()
+    }
+    
     var dropDelegate: FileOperatorDropDelegate = FileOperatorDropDelegate()
 
     init() {
