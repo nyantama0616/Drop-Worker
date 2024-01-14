@@ -13,10 +13,19 @@ public struct OutputArea: View {
             Text("Outputs")
             List(outputFileNames, id: \.self) { fileName in
                 Text(fileName)
+                    .onDrag {
+                        let fileURL = Manager.fileIO.outputDirectoryURL.appendingPathComponent(fileName)
+                        guard let itemProvider = NSItemProvider(contentsOf: fileURL) else {
+                            return NSItemProvider()
+                        }
+                        return itemProvider
+                    }
             }
         }
-        .onAppear() {
-            print(outputFileNames)
-        }
     }
+}
+
+#Preview {
+    OutputArea(outputFileNames: ["hoge", "fuga"])
+        .padding()
 }
