@@ -29,4 +29,16 @@ public struct FileIO {
             return []
         }
     }
+
+    public func clearOutputs() {
+        let fileManager = FileManager.default
+        do {
+            let outputFiles = try fileManager.contentsOfDirectory(at: outputDirectoryURL, includingPropertiesForKeys: nil)
+            for file in outputFiles {
+                try fileManager.removeItem(at: file)
+            }
+        } catch {
+            print("Error clearing output files: \(error)")
+        }
+    }
 }

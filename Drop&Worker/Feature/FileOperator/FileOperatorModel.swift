@@ -3,6 +3,10 @@ import Foundation
 public struct FileOperatorModel {
     private(set) var outputFileNames: [String] = []
 
+    public init() {
+        clearOutputs()
+    }
+
     //ファイル名の末尾に名前を追加する
     public mutating func createFileWithName(fileURL: URL) {
         let name = "中北竜馬" //TODO: 設定可能にする
@@ -21,4 +25,9 @@ public struct FileOperatorModel {
             print("Error copying file: \(error)")
         }
     }
+    
+    public mutating func clearOutputs() {
+        Manager.fileIO.clearOutputs() //TODO: エラーハンドリングするべきか？
+        self.outputFileNames = Manager.fileIO.getOutputFileNames()
+    }   
 }
