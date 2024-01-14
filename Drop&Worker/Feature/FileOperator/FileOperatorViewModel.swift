@@ -14,26 +14,7 @@ public class FileOperatorViewModel: ObservableObject {
 
     init() {
         dropDelegate.fileFunc = { [weak self] url in
-            self?._addName(fileURL: url)
-        }
-    }
-
-    //TODO: 同じ名前のファイルが存在した場合の挙動を考える
-    private func _addName(fileURL: URL) {
-        let name = "中北竜馬" //TODO: 設定可能にする
-        
-        let fileNameWithoutExtension = fileURL.deletingPathExtension().lastPathComponent
-        let fileExtension = fileURL.pathExtension
-        
-        let destinationFileName = "\(fileNameWithoutExtension)_\(name).\(fileExtension)"
-        let destinationURL = Manager.fileIO.outputDirectoryURL.appendingPathComponent(destinationFileName)
-
-        do {
-            try FileManager.default.copyItem(at: fileURL, to: destinationURL)
-            model.updateOutputFileNames()
-            print("Copied file to: \(destinationURL)")
-        } catch {
-            print("Error copying file: \(error)")
+            self?.model.createFileWithName(fileURL: url) //TODO: なんで「？」が必要なのか調べる
         }
     }
 }
